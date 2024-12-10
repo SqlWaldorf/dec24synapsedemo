@@ -2,7 +2,7 @@
 	"name": "Trigger_0np",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipeline": {
 			"pipelineReference": {
 				"referenceName": "copy bike stations to staging",
