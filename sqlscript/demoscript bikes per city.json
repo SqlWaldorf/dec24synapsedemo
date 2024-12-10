@@ -2,7 +2,7 @@
 	"name": "demoscript bikes per city",
 	"properties": {
 		"content": {
-			"query": "-- This is auto-generated code\nSELECT\n   sum(cast(dockcount as int)), landmark\nFROM\n    OPENROWSET(\n        BULK 'https://nju2udec24mydlg2.dfs.core.windows.net/datalake/raw/babs/201508_station_data.csv',\n        FORMAT = 'CSV', HEADER_ROW = TRUE,\n        PARSER_VERSION = '2.0'\n    ) AS [result]\ngroup by landmark",
+			"query": "-- This is auto-generated code\nSELECT\n   sum(cast(dockcount as int)), landmark as cityname\nFROM\n    OPENROWSET(\n        BULK 'https://nju2udec24mydlg2.dfs.core.windows.net/datalake/raw/babs/201508_station_data.csv',\n        FORMAT = 'CSV', HEADER_ROW = TRUE,\n        PARSER_VERSION = '2.0'\n    ) AS [result]\ngroup by landmark",
 			"metadata": {
 				"language": "sql"
 			},
