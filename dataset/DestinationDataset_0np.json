@@ -1,0 +1,20 @@
+{
+	"name": "DestinationDataset_0np",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "synandec24u2udemo-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "staging/bikestation",
+				"fileSystem": "datalake"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
