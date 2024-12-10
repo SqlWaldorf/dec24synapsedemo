@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "synandec24u2udemo"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"demodb_password": {
+			"value": ""
+		},
+		"mysalesdb_password": {
+			"value": ""
+		},
+		"synandec24u2udemo-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:synandec24u2udemo.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"demodb_properties_typeProperties_server": {
+			"value": "njsql.database.windows.net"
+		},
+		"demodb_properties_typeProperties_database": {
+			"value": "demodb"
+		},
+		"demodb_properties_typeProperties_userName": {
+			"value": "nico"
+		},
+		"mydemokeyvault_properties_typeProperties_baseUrl": {
+			"value": "https://njdemokeys.vault.azure.net/"
+		},
+		"mysalesdb_properties_typeProperties_server": {
+			"value": "njsql.database.windows.net"
+		},
+		"mysalesdb_properties_typeProperties_database": {
+			"value": "demodb"
+		},
+		"mysalesdb_properties_typeProperties_userName": {
+			"value": "nico"
+		},
+		"synandec24u2udemo-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://nju2udec24mydlg2.dfs.core.windows.net"
+		}
+	}
+}
