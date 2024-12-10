@@ -1,0 +1,20 @@
+{
+	"name": "DestinationDataset_t2m",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "synandec24u2udemo-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "raw/babs/tripdata",
+				"fileSystem": "datalake"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
