@@ -1,0 +1,11 @@
+{
+	"name": "mydemokeyvault",
+	"properties": {
+		"description": "SDfghjgfds",
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://njdemokeys.vault.azure.net/"
+		}
+	}
+}
