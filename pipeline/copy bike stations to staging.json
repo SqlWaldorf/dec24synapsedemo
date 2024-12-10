@@ -5,6 +5,7 @@
 		"activities": [
 			{
 				"name": "Copy_0np",
+				"description": "test",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
