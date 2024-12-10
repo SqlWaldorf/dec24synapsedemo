@@ -49,6 +49,130 @@
 					"validateDataConsistency": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Trip ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TripID",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Duration",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Duration",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Start Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "StartDate",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Start Station",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "StartStation",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Start Terminal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "StartTerminal",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "End Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EndDate",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "End Station",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EndStation",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "End Terminal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EndTerminal",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Bike #",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Bike#",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Subscriber Type",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SubscriberType",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Zip Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZipCode",
+									"physicalType": "UTF8"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
