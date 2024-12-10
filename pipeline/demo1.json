@@ -1,0 +1,61 @@
+{
+	"name": "demo1",
+	"properties": {
+		"activities": [
+			{
+				"name": "load data",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
+			},
+			{
+				"name": "process data",
+				"type": "Wait",
+				"dependsOn": [
+					{
+						"activity": "load data",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
+			},
+			{
+				"name": "delete old data",
+				"type": "Wait",
+				"dependsOn": [
+					{
+						"activity": "process data",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
+			}
+		],
+		"parameters": {
+			"minfilesize": {
+				"type": "int",
+				"defaultValue": 15000
+			}
+		},
+		"variables": {
+			"mydemovar": {
+				"type": "String",
+				"defaultValue": "hello"
+			}
+		},
+		"annotations": []
+	}
+}
