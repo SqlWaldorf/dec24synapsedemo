@@ -1,0 +1,11 @@
+{
+	"name": "demopbiws",
+	"properties": {
+		"annotations": [],
+		"type": "PowerBIWorkspace",
+		"typeProperties": {
+			"workspaceID": "ae71eb6d-99b6-4d70-8a74-1bd16ec25cc1",
+			"tenantID": "bde242ba-8b31-49b1-8e7a-9a5399b85bce"
+		}
+	}
+}
