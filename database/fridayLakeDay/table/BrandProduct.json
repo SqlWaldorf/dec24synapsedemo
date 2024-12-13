@@ -1,0 +1,126 @@
+{
+	"name": "BrandProduct",
+	"properties": {
+		"Name": "BrandProduct",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "fridayLakeDay"
+		},
+		"Description": "An association between Brand and Product. \n\nBrands are often associated with more than one Product and a Product can in some cases be associated with more than one Brand.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BrandId",
+					"Description": "The unique identifier of a Brand.",
+					"BaseAttributeReference": {
+						"Entity": "BrandProduct.cdm.json/BrandProduct",
+						"Name": "BrandId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "BrandProduct.cdm.json/BrandProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The start date of the relationship between the Brand and Product.",
+					"BaseAttributeReference": {
+						"Entity": "BrandProduct.cdm.json/BrandProduct",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The end date of the relationship between the Brand and Product.",
+					"BaseAttributeReference": {
+						"Entity": "BrandProduct.cdm.json/BrandProduct",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://datalake@nju2udec24mydlg2.dfs.core.windows.net/fridayLakeDay/BrandProduct",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://datalake@nju2udec24mydlg2.dfs.core.windows.net/fridayLakeDay/BrandProduct",
+				"Properties": {
+					"LinkedServiceName": "synandec24u2udemo-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BrandId\":{\"entity\":\"BrandProduct.cdm.json/BrandProduct\",\"name\":\"BrandId\"},\"ProductId\":{\"entity\":\"BrandProduct.cdm.json/BrandProduct\",\"name\":\"ProductId\"},\"PeriodStartDate\":{\"entity\":\"BrandProduct.cdm.json/BrandProduct\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"BrandProduct.cdm.json/BrandProduct\",\"name\":\"PeriodEndDate\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"name\":\"BrandProduct\",\"description\":\"An association between Brand and Product. \\n\\nBrands are often associated with more than one Product and a Product can in some cases be associated with more than one Brand.\",\"baseEntityReference\":{\"name\":\"BrandProduct\",\"path\":\"BrandProduct.cdm.json/BrandProduct\"},\"primaryKey\":[\"BrandId\",\"ProductId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BrandProduct.cdm.json/BrandProduct\",\"name\":\"BrandId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Brand.\",\"isNullable\":false,\"name\":\"BrandId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BrandProduct.cdm.json/BrandProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BrandProduct.cdm.json/BrandProduct\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The start date of the relationship between the Brand and Product.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BrandProduct.cdm.json/BrandProduct\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The end date of the relationship between the Brand and Product.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"}]}}}",
+			"Description": "An association between Brand and Product. \n\nBrands are often associated with more than one Product and a Product can in some cases be associated with more than one Brand.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0C614C\"}",
+			"PrimaryKeys": "BrandId,ProductId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,143 @@
+{
+	"name": "Color",
+	"properties": {
+		"Name": "Color",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "fridayLakeDay"
+		},
+		"Description": "The color.\n\nA person's recognition of an object's color is the result of a complex process involving the response of the brain to the interaction of light with the object. Numerical descriptions of these three components ( 1. light source, 2. object, 3. observer) are all that is required to calculate the description of any color with an objective set of numbers. Other factors certainly influence our perception of color, but without these three components there is no perception.  \n\nEx: \nAqua - a light greenish blue.\nAquamarine - a pale blue to light greenish blue.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ColorId",
+					"Description": "The unique identifier of a color.",
+					"BaseAttributeReference": {
+						"Entity": "Color.cdm.json/Color",
+						"Name": "ColorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ColorName",
+					"Description": "The name of a color.",
+					"BaseAttributeReference": {
+						"Entity": "Color.cdm.json/Color",
+						"Name": "ColorName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ColorDescription",
+					"Description": "The description of a color.",
+					"BaseAttributeReference": {
+						"Entity": "Color.cdm.json/Color",
+						"Name": "ColorDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EarthToneIndicator",
+					"Description": "Indicates that the color is any of various rich colors containing some brown.",
+					"BaseAttributeReference": {
+						"Entity": "Color.cdm.json/Color",
+						"Name": "EarthToneIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LabDipColorIndicator",
+					"Description": "Indicates that the color is a solid color fabric dyed to match a given color standard.",
+					"BaseAttributeReference": {
+						"Entity": "Color.cdm.json/Color",
+						"Name": "LabDipColorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://datalake@nju2udec24mydlg2.dfs.core.windows.net/fridayLakeDay/Color",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://datalake@nju2udec24mydlg2.dfs.core.windows.net/fridayLakeDay/Color",
+				"Properties": {
+					"LinkedServiceName": "synandec24u2udemo-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ColorId\":{\"entity\":\"Color.cdm.json/Color\",\"name\":\"ColorId\"},\"ColorName\":{\"entity\":\"Color.cdm.json/Color\",\"name\":\"ColorName\"},\"ColorDescription\":{\"entity\":\"Color.cdm.json/Color\",\"name\":\"ColorDescription\"},\"EarthToneIndicator\":{\"entity\":\"Color.cdm.json/Color\",\"name\":\"EarthToneIndicator\"},\"LabDipColorIndicator\":{\"entity\":\"Color.cdm.json/Color\",\"name\":\"LabDipColorIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Color\",\"path\":\"Color.cdm.json/Color\"},\"description\":\"The color.\\n\\nA person's recognition of an object's color is the result of a complex process involving the response of the brain to the interaction of light with the object. Numerical descriptions of these three components ( 1. light source, 2. object, 3. observer) are all that is required to calculate the description of any color with an objective set of numbers. Other factors certainly influence our perception of color, but without these three components there is no perception.  \\n\\nEx: \\nAqua - a light greenish blue.\\nAquamarine - a pale blue to light greenish blue.\",\"primaryKey\":[\"ColorId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Color.cdm.json/Color\",\"name\":\"ColorId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a color.\",\"isNullable\":false,\"name\":\"ColorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Color.cdm.json/Color\",\"name\":\"ColorName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a color.\",\"isNullable\":true,\"name\":\"ColorName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Color.cdm.json/Color\",\"name\":\"ColorDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a color.\",\"isNullable\":true,\"name\":\"ColorDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Color.cdm.json/Color\",\"name\":\"EarthToneIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the color is any of various rich colors containing some brown.\",\"isNullable\":true,\"name\":\"EarthToneIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Color.cdm.json/Color\",\"name\":\"LabDipColorIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the color is a solid color fabric dyed to match a given color standard.\",\"isNullable\":true,\"name\":\"LabDipColorIndicator\"}]}}}",
+			"Description": "The color.\n\nA person's recognition of an object's color is the result of a complex process involving the response of the brain to the interaction of light with the object. Numerical descriptions of these three components ( 1. light source, 2. object, 3. observer) are all that is required to calculate the description of any color with an objective set of numbers. Other factors certainly influence our perception of color, but without these three components there is no perception.  \n\nEx: \nAqua - a light greenish blue.\nAquamarine - a pale blue to light greenish blue.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#0C614C\"}",
+			"PrimaryKeys": "ColorId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}
