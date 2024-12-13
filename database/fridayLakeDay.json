@@ -1,0 +1,22 @@
+{
+	"name": "fridayLakeDay",
+	"properties": {
+		"Name": "fridayLakeDay",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://datalake@nju2udec24mydlg2.dfs.core.windows.net/fridayLakeDay",
+			"Properties": {
+				"FormatType": "parquet",
+				"LinkedServiceName": "synandec24u2udemo-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}

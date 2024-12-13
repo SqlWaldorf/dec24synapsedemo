@@ -1,0 +1,23 @@
+{
+	"name": "relationship-lotodkgoxd",
+	"properties": {
+		"Name": "relationship-lotodkgoxd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "fridayLakeDay"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Sales",
+		"ToTableName": "Products",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductSK",
+				"ToColumnName": "ProductSK"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}
